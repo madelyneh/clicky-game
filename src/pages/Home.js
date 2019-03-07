@@ -1,4 +1,8 @@
 import React, {Component} from "react";
+import NavBar from "../components/NavBar";
+import Pictures from "../components/Pictures/index"
+// import Wrapper from "../components/Wrapper"
+ 
 
 class Home extends Component {
 
@@ -11,7 +15,8 @@ class Home extends Component {
   render() {
     return (
       <div>
-        <h1>Home Page</h1>
+        <NavBar />
+        <Pictures />
       </div>
     );
   }
