@@ -14,7 +14,7 @@ const Pictures = [
   },
   {
     name: "Tinkier Bell",
-    src: "https://ae01.alicdn.com/kf/HTB13ZN5IXXXXXcIXXXXq6xXFXXXN/Free-shipping-Wall-Stickers-tinkerbell-cartoon-sticker-gaint-size.jpg_640x640.jpg"
+    src: "https://www.freeiconspng.com/uploads/tinkerbell-png-12.png"
   },
   {
     name: "Aladdin",
@@ -46,7 +46,7 @@ const Pictures = [
   },
   {
     name: "Tweety Bird",
-    src: "https://www.cartoon-clipart.co/amp/images/tweet7.gif"
+    src: "http://1.bp.blogspot.com/-I4lfeHiOPPo/T0cKkXEoXrI/AAAAAAAAEkU/ViKNVO6AmbA/s400/cute_tweety_cartoon_characters.png"
   },
 ]
 
