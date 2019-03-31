@@ -3,7 +3,7 @@ import Navbar from "../components/NavBar";
 import Wrapper from '../components/Wrapper';
 import PictureCard from "../components/PictureCard/index"
 import characters from "./../components/PictureCard/pictures.json";
-
+import "./style.css";
 
 class Home extends Component {
   // Setting this.state.characters to the characters json array
@@ -103,7 +103,7 @@ class Home extends Component {
           <div className={this.state.show ? 'shake col-3' : 'col-3'} key={character.id}>
           <PictureCard
             id={character.id}
-            image={character.image}
+            image={character.src}
             handleClick={this.gameCardClick}
           />
           </div>

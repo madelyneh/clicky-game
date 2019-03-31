@@ -1,0 +1,20 @@
+.navbar {
+  background-color:rgb(253, 253, 253);
+  margin-bottom: 20px;
+  border-bottom: silver dotted 3px;
+}
+
+.mickey {
+  max-height: 50px;
+  max-width: 50px;
+}
+
+.mickeyWhole {
+  max-height: 100px;
+  max-width: 100px;
+
+}
+
+.message {
+  margin-bottom: 20px
+}

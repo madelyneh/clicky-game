@@ -40,11 +40,11 @@ class Message extends Component {
     renderMessage = () => {
         switch (this.state.message) {
         case "correct":
-          return "You guessed correctly!";
+          return "Good job! 😁";
         case "incorrect":
-          return "You guessed incorrectly!";
+          return "You already guessed that one.. 😕";
         default:
-          return "Click a character to begin!";
+          return "Help Mickey out! Click any image to begin.";
         }
     };
 
