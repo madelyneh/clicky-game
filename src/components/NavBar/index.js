@@ -1,11 +1,22 @@
 import * as React from "react";
+import Message from './../Message';
 
-function NavBar() {
-  return (
-    <nav className="navbar navbar-expand-lg navbar-light bg-light justify-content-center">
-      <a className="navbar-brand text-success font-weight-bold text-monospace" href="/">Clicky for Mickey</a>
-    </nav>
-  );
-}
 
-export default NavBar;
+const Navbar = props => (
+  
+  <div >
+      <nav className="navbar">
+          <div className="col-sm text-center">
+              <h1>Clicky for Mickey</h1>
+          </div>
+          <div className="col-sm text-center">
+              <div className="float-center "><Message score={props.score} topScore={props.topScore} /></div>
+          </div>
+          <div className="col-sm text-center">
+              <div className="float-right ">Score: {props.score} | Top Score: {props.topScore}</div>
+          </div>
+      </nav>
+  </div>
+)
+
+export default Navbar;
