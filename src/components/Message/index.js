@@ -37,7 +37,7 @@ class Message extends Component {
         case "incorrect":
           return "You already guessed that one.. 😕";
         default:
-          return "Good job! 😁";
+          return "Yayy! Good Luck! 😊";
         }
     };
 

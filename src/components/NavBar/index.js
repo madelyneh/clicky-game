@@ -9,8 +9,6 @@ const Navbar = props => (
           <div className="col-sm text-center">
               <h1>Clicky for Mickey <img className="mickey-black" alt="mickey" src={mickey}/></h1>
           </div>
-          
-          
           <div className="col-sm text-center score">
               <div className="float-right ">⦙ Score: {props.score} ⦙ ⦙ Top Score: {props.topScore} ⦙</div>
           </div>
