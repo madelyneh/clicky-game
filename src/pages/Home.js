@@ -3,10 +3,11 @@ import Navbar from "../components/NavBar";
 import Wrapper from '../components/Wrapper';
 import PictureCard from "../components/PictureCard/index"
 import characters from "./../components/PictureCard/pictures.json";
+import mickey from './../components/NavBar/mickey_mouse.png';
+
 import "./style.css";
 
 class Home extends Component {
-  // Setting this.state.characters to the characters json array
   state = {
     characters,
     score: 0,
@@ -17,29 +18,23 @@ class Home extends Component {
   
 
   componentDidMount() {
-        // reorders the dataarray on state changes
         this.setState({ characters: this.shuffleDeck(this.state.characters) });
         
     }
     
-    // shuffle the imported data array in random order
     shuffleDeck = characters => {
         let newFriends = characters.sort(() => Math.random() -0.5);
         return newFriends;
     };
 
-    // resets all the clicked properties to false
     resetDeck = characters => {
         const resetFriends = characters.map(item => ({ ...item, clicked: false }));
         if (this.timeoutId) {
         clearTimeout(this.timeoutId);
     }
-        // console.log(characters);
-        // console.log(resetData);
         return this.shuffleDeck(resetFriends);
       };
 
-    // checks to see if score is higher than the topscore then updates the state with the new update data
     correctPick = newData => {
         let newScore = this.state.score;
         newScore++
@@ -53,7 +48,6 @@ class Home extends Component {
         })
     }
 
-    // restarts the game with fresh data
     wrongPick = newData => {
         this.setState({
             characters: this.resetDeck(newData),
@@ -64,15 +58,11 @@ class Home extends Component {
         this.timeoutId = setTimeout(function () {
         this.setState({show: true});
         }.bind(this), 0);
-        console.log(this.timeoutId)
         
     }
 
-    // when a card is clicked, check if it has been clicked before,
-    // then update that cards clicked property
     gameCardClick = id => {
         let guessedCorrectly = false;
-        // newData will be the data array with updated clicked properties
         const newData = this.state.characters.map(item => {
           if (item.id === id) {
             if (!item.clicked) {
@@ -82,21 +72,33 @@ class Home extends Component {
           }
           return item;     
         });
-        // if guessedCorrectly = true, run the correctGuess function,
-        // else run the wrongGuess function
         guessedCorrectly ? this.correctPick(newData) : this.wrongPick(newData);
       };
-
-
-
-
  
 
-  // Map over this.state.characters and render a FriendCard component for each friend object
   render() {
     return (
       <Wrapper>
         <Navbar score={this.state.score} topScore = {this.state.topScore}></Navbar>
+       
+        <div className="container intro-row" >
+        {this.state.score !== 0 ? (""):(
+          <div className="row intro">
+            <div className="col-sm-5 ">
+              <img className="mickeyWhole float-right" alt="mickey" src={mickey}/>
+            </div>
+            <div className="col-sm-7">
+              <div className="mickeySays">
+                <p>Hello there! Can you help me get all my friends attention?</p>
+                <p>You do this by clicking on them, but you can only click </p>
+                  <p>them once or they will get upset.</p>
+              </div>
+            </div>
+          </div>
+          ) 
+        }
+        </div>
+
         <div className="container">
         <div className="row">
         {this.state.characters.map(character => (

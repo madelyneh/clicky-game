@@ -1,12 +1,14 @@
 .navbar {
-  background-color:rgb(253, 253, 253);
+  background-color:azure;
   margin-bottom: 20px;
-  border-bottom: silver dotted 3px;
+  /* border-bottom: silver dotted 3px; */
+  box-shadow: 0 3px 6px #999, 0 3px 6px #999;
 }
 
 .mickey {
   max-height: 50px;
   max-width: 50px;
+  
 }
 
 .mickeyWhole {
@@ -18,3 +20,12 @@
 .message {
   margin-bottom: 20px
 }
+
+.mickeySays {
+  display:inline-block;
+  background-color: white;
+  padding: 8px;
+  box-shadow: 0 3px 6px #999, 0 3px 6px #999;
+  border-radius: 10px;
+}
+

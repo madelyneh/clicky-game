@@ -2,3 +2,18 @@
 @import "~@blueprintjs/core/lib/css/blueprint.css";
 @import "~@blueprintjs/icons/lib/css/blueprint-icons.css";
 
+
+.mickeySays {
+  display:inline-block;
+  background-color: white;
+  padding: 8px;
+  box-shadow: 0 3px 6px #999, 0 3px 6px #999;
+  border-radius: 10px;
+}
+
+.intro-row {
+  width: 100%;
+  padding-top: 140px;
+
+}
+

@@ -1,5 +1,5 @@
 .card {
-  background:blue;
+  background:black;
   border-radius: 2px;
   height: 250px;
   width: 250px;
@@ -7,6 +7,11 @@
   position: relative;
   box-shadow: 0 3px 6px #999, 0 3px 6px #999;
   text-align: left;
+}
+.card:hover {
+  background:greenyellow;
+  box-shadow: 0 3px 6px greenyellow, 0 3px 6px greenyellow;
+  cursor: pointer;
 }
 
 .card > .img-container {
