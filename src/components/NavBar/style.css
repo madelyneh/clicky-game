@@ -1,31 +1,17 @@
 .navbar {
   background-color:azure;
   margin-bottom: 20px;
-  /* border-bottom: silver dotted 3px; */
   box-shadow: 0 3px 6px #999, 0 3px 6px #999;
 }
 
-.mickey {
+.mickey-black {
   max-height: 50px;
   max-width: 50px;
-  
 }
 
-.mickeyWhole {
-  max-height: 100px;
-  max-width: 100px;
-
-}
-
-.message {
-  margin-bottom: 20px
-}
-
-.mickeySays {
-  display:inline-block;
-  background-color: white;
-  padding: 8px;
-  box-shadow: 0 3px 6px #999, 0 3px 6px #999;
-  border-radius: 10px;
+h1 {
+  font-size: 3em !important;
+  font-weight: bold;
+  font-family: 'Architects Daughter', cursive;
 }
 

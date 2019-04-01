@@ -37,7 +37,7 @@ class Message extends Component {
         case "incorrect":
           return "You already guessed that one.. 😕";
         default:
-          return "Help Mickey out! Click any image to begin.";
+          return "Good job! 😁";
         }
     };
 
@@ -54,7 +54,7 @@ class Message extends Component {
 
     render() {
         return(
-          <h2 
+          <p 
             className={` 
               gameMessage 
               ${this.state.animating? this.addAnimation(): ""}  
@@ -64,7 +64,7 @@ class Message extends Component {
             onAnimationEnd={() => this.setState({ animating: false })} 
           >
             {this.renderMessage()}
-          </h2>  
+          </p>  
         );
     }
 }

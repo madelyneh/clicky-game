@@ -4,8 +4,12 @@ import Wrapper from '../components/Wrapper';
 import PictureCard from "../components/PictureCard/index"
 import characters from "./../components/PictureCard/pictures.json";
 import mickey from './../components/NavBar/mickey_mouse.png';
+import Message from './../components/Message';
+import mickeyHead from './../components/NavBar/mickeyHead.png';
+
 
 import "./style.css";
+import { stringify } from "querystring";
 
 class Home extends Component {
   state = {
@@ -24,11 +28,12 @@ class Home extends Component {
     
     shuffleDeck = characters => {
         let newFriends = characters.sort(() => Math.random() -0.5);
+        this.setState({ show: false })
         return newFriends;
     };
 
     resetDeck = characters => {
-        const resetFriends = characters.map(item => ({ ...item, clicked: false }));
+        const resetFriends = characters.map(item => ({ ...item, picked: false,}));
         if (this.timeoutId) {
         clearTimeout(this.timeoutId);
     }
@@ -63,11 +68,13 @@ class Home extends Component {
 
     gameCardClick = id => {
         let guessedCorrectly = false;
+
         const newData = this.state.characters.map(item => {
           if (item.id === id) {
-            if (!item.clicked) {
-              item.clicked = true;
+            if (!item.picked) {
+              item.picked = true;
               guessedCorrectly = true;
+
             }
           }
           return item;     
@@ -82,12 +89,24 @@ class Home extends Component {
         <Navbar score={this.state.score} topScore = {this.state.topScore}></Navbar>
        
         <div className="container intro-row" >
-        {this.state.score !== 0 ? (""):(
-          <div className="row intro">
-            <div className="col-sm-5 ">
-              <img className="mickeyWhole float-right" alt="mickey" src={mickey}/>
+        {this.state.topScore !== 0 ? (
+          <div className="row">
+            <div className="col-sm-5">
+              <img className="mickey float-right" alt="mickey" src={mickeyHead}/>
             </div>
             <div className="col-sm-7">
+              <div className="mickeySays">
+                <Message score={this.state.score} topScore={this.state.topScore}/>
+              </div>
+            </div>
+          </div>
+        
+        ):(
+          <div className="row intro">
+            <div className="col-sm-4">
+              <img className="mickeyWhole float-right" alt="mickey" src={mickey}/>
+            </div>
+            <div className="col-sm-8">
               <div className="mickeySays">
                 <p>Hello there! Can you help me get all my friends attention?</p>
                 <p>You do this by clicking on them, but you can only click </p>
@@ -100,17 +119,17 @@ class Home extends Component {
         </div>
 
         <div className="container">
-        <div className="row">
-        {this.state.characters.map(character => (
-          <div className={this.state.show ? 'shake col-3' : 'col-3'} key={character.id}>
-          <PictureCard
-            id={character.id}
-            image={character.src}
-            handleClick={this.gameCardClick}
-          />
+          <div className="row">
+          {this.state.characters.map(character => (
+            <div className={this.state.show ? 'shake col-sm-auto' : 'col-sm-auto'} key={character.id}>
+            <PictureCard
+              id={character.id}
+              image={character.src}
+              handleClick={this.gameCardClick}
+            />
+            </div>
+          ))}
           </div>
-        ))}
-        </div>
         </div>
       </Wrapper>
     );
