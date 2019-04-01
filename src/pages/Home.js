@@ -119,7 +119,7 @@ class Home extends Component {
         </div>
 
         <div className="container">
-          <div className="row">
+          <div className="row justify-content-center">
           {this.state.characters.map(character => (
             <div className={this.state.show ? 'shake col-sm-auto' : 'col-sm-auto'} key={character.id}>
             <PictureCard
